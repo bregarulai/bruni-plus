@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { signIn } from 'next-auth/client';
 
 import {
   HomeIcon,
@@ -61,7 +62,10 @@ const Header = () => {
           </div>
         </Link>
       </div>
-      <button className='ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-white hover:text-black transition duration-200'>
+      <button
+        className='ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-white hover:text-black transition duration-200'
+        onClick={signIn}
+      >
         Login
       </button>
     </header>
