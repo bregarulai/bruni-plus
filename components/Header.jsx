@@ -46,17 +46,24 @@ const Header = () => {
         </Link>
         <Link href='/'>
           <div className='header-link group'>
-            <img src='/images/movie-icon.svg' alt='' className='h-5' />
+            <img src='/images/movie-icon.svg' alt='link icon' className='h-5' />
             <span className='span'>Movies</span>
           </div>
         </Link>
         <Link href='/'>
           <div className='header-link group'>
-            <img src='/images/series-icon.svg' alt='' className='h-5' />
+            <img
+              src='/images/series-icon.svg'
+              alt='link icon'
+              className='h-5'
+            />
             <span className='span'>Series</span>
           </div>
         </Link>
       </div>
+      <button className='ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-white hover:text-black transition duration-200'>
+        Login
+      </button>
     </header>
   );
 };
