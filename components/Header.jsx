@@ -2,11 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { HomeIcon } from '@heroicons/react/solid';
+import {
+  HomeIcon,
+  PlusIcon,
+  SearchIcon,
+  StarIcon,
+} from '@heroicons/react/solid';
 
 const Header = () => {
   return (
-    <header className='sticky bg-[#040714] top-0 z-[1000] h-[4.5rem] flex items-center px-10 md:px-12'>
+    <header className='sticky top-0 z-[1000] h-[4.5rem] flex items-center px-10 md:px-12'>
       {/* <div>Bruni+</div> */}
       <Image
         src='/images/logo.svg'
@@ -14,12 +19,42 @@ const Header = () => {
         height={80}
         className='cursor-pointer'
       />
-      <div>
+      <div className='hidden ml-10 md:flex items-center space-x-6'>
         <Link href='/'>
-          <span className='header-link group'>
+          <div className='header-link group'>
             <HomeIcon className='h-4' />
             <span className='span'>Home</span>
-          </span>
+          </div>
+        </Link>
+        <Link href='/'>
+          <div className='header-link group'>
+            <SearchIcon className='h-4' />
+            <span className='span'>Search</span>
+          </div>
+        </Link>
+        <Link href='/'>
+          <div className='header-link group'>
+            <PlusIcon className='h-4' />
+            <span className='span'>Watchlist</span>
+          </div>
+        </Link>
+        <Link href='/'>
+          <div className='header-link group'>
+            <StarIcon className='h-4' />
+            <span className='span'>Originals</span>
+          </div>
+        </Link>
+        <Link href='/'>
+          <div className='header-link group'>
+            <img src='/images/movie-icon.svg' alt='' className='h-5' />
+            <span className='span'>Movies</span>
+          </div>
+        </Link>
+        <Link href='/'>
+          <div className='header-link group'>
+            <img src='/images/series-icon.svg' alt='' className='h-5' />
+            <span className='span'>Series</span>
+          </div>
         </Link>
       </div>
     </header>
