@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Header } from '../components';
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <title>Bruni Plus</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
+      <Header />
       <main className=''></main>
     </div>
   );
