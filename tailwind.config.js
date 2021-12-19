@@ -4,7 +4,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      body: ['Montserrat', 'sans-serif'],
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 };
