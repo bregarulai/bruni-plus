@@ -1,4 +1,6 @@
+import { getSession } from 'next-auth/client';
 import Head from 'next/head';
+
 import { Header } from '../components';
 
 export default function Home() {
@@ -12,4 +14,14 @@ export default function Home() {
       <main className=''></main>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    },
+  };
 }
