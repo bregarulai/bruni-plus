@@ -1,9 +1,10 @@
-import { getSession } from 'next-auth/client';
+import { getSession, useSession } from 'next-auth/client';
 import Head from 'next/head';
 
-import { Header } from '../components';
+import { Header, Hero } from '../components';
 
 export default function Home() {
+  const [session] = useSession();
   return (
     <div className=''>
       <Head>
@@ -11,7 +12,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <main className=''></main>
+
+      {!session ? <Hero /> : <main></main>}
     </div>
   );
 }
