@@ -1,7 +1,7 @@
 import { getSession, useSession } from 'next-auth/client';
 import Head from 'next/head';
 
-import { Header, Hero } from '../components';
+import { Header, Hero, Slider } from '../components';
 
 export default function Home() {
   const [session] = useSession();
@@ -13,7 +13,13 @@ export default function Home() {
       </Head>
       <Header />
 
-      {!session ? <Hero /> : <main></main>}
+      {!session ? (
+        <Hero />
+      ) : (
+        <main>
+          <Slider />
+        </main>
+      )}
     </div>
   );
 }
