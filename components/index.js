@@ -1,4 +1,4 @@
-export { default as CollectionThumbnail } from './CollectionThumbnail';
+export { default as MovieThumbnail } from './MovieThumbnail';
 export { default as Brands } from './Brands';
 export { default as Header } from './Header';
 export { default as Hero } from './Hero';

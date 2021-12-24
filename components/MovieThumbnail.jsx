@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CollectionThumbnail = ({ result }) => {
+const MovieThumbnail = ({ result }) => {
   return (
     <article>
       <span>{result.title}</span>
@@ -8,4 +8,4 @@ const CollectionThumbnail = ({ result }) => {
   );
 };
 
-export default CollectionThumbnail;
+export default MovieThumbnail;
