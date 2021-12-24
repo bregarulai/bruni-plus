@@ -1,10 +1,16 @@
 import axios from 'axios';
-import { getSession } from 'next-auth/client';
+import { getSession, useSession } from 'next-auth/client';
 import Head from 'next/head';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react';
-import { Header } from '../../components';
+
+import { Header, Hero } from '../../components';
 
 const MovieDetail = ({ result }) => {
+  const [session] = useSession();
+  const BASE_URL = 'https://image.tmdb.org/t/p/original/';
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -12,6 +18,23 @@ const MovieDetail = ({ result }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      {!session ? (
+        <Hero />
+      ) : (
+        <main className='relative z-50'>
+          <div className='relative min-h-[calc(100vh-72px)]'>
+            <Image
+              src={
+                `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
+                `${BASE_URL}${result.poster_path}`
+              }
+              alt={result.title}
+              layout='fill'
+              objectFit='cover'
+            />
+          </div>
+        </main>
+      )}
     </>
   );
 };
