@@ -22,7 +22,7 @@ const MovieDetail = ({ result }) => {
         <Hero />
       ) : (
         <main className='relative z-50'>
-          <div className='relative min-h-[calc(100vh-72px)]'>
+          <div className='relative min-h-[calc(100vh-72px)] bg-black mix-blend-overlay'>
             <Image
               src={
                 `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
@@ -31,6 +31,8 @@ const MovieDetail = ({ result }) => {
               alt={result.title}
               layout='fill'
               objectFit='cover'
+              priority
+              className='opacity-60'
             />
           </div>
         </main>
