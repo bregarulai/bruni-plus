@@ -33,8 +33,11 @@ export default function Home({
         <main className='relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]'>
           <Slider />
           <Brands />
-          <MoviesCollection />
-          <ShowsCollection />
+
+          <MoviesCollection title='Popular Movies' results={popularMovies} />
+          <ShowsCollection title='Popular Shows' results={popularShows} />
+          <MoviesCollection title='Top Rated Movies' results={topRatedMovies} />
+          <ShowsCollection title='Top Rated Shows' results={topRatedShows} />
         </main>
       )}
     </div>
@@ -67,10 +70,10 @@ https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.API_KEY}&languag
 
   const [popularMovies, popularShows, topRatedMovies, topRatedShows] =
     await Promise.all([
-      popularMoviesRes.data,
-      popularShowsRes.data,
-      topRatedMoviesRes.data,
-      topRatedShowsRes.data,
+      popularMoviesRes.data.results,
+      popularShowsRes.data.results,
+      topRatedMoviesRes.data.results,
+      topRatedShowsRes.data.results,
     ]);
 
   return {
