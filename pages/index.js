@@ -20,7 +20,7 @@ export default function Home({
   const [session] = useSession();
 
   return (
-    <div className=''>
+    <>
       <Head>
         <title>Bruni Plus</title>
         <link rel='icon' href='/favicon.ico' />
@@ -40,7 +40,7 @@ export default function Home({
           <ShowsCollection title='Top Rated Shows' results={topRatedShows} />
         </main>
       )}
-    </div>
+    </>
   );
 }
 
