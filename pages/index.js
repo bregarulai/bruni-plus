@@ -1,7 +1,14 @@
 import { getSession, useSession } from 'next-auth/client';
 import Head from 'next/head';
 
-import { Brands, Header, Hero, Slider } from '../components';
+import {
+  Brands,
+  Header,
+  Hero,
+  MoviesCollection,
+  ShowsCollection,
+  Slider,
+} from '../components';
 
 export default function Home() {
   const [session] = useSession();
@@ -19,6 +26,8 @@ export default function Home() {
         <main className='relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]'>
           <Slider />
           <Brands />
+          <MoviesCollection />
+          <ShowsCollection />
         </main>
       )}
     </div>
