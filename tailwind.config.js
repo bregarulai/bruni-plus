@@ -7,7 +7,11 @@ module.exports = {
     fontFamily: {
       body: ['Montserrat', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        home: "url('/images/background.png')",
+      },
+    },
   },
   plugins: [require('tailwind-scrollbar-hide')],
 };
