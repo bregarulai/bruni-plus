@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { Header, Hero } from '../../components';
+import { Header, Hero, MovieInfo } from '../../components';
 
 const MovieDetail = ({ result }) => {
   const [session] = useSession();
@@ -35,6 +35,7 @@ const MovieDetail = ({ result }) => {
               className='opacity-60'
             />
           </div>
+          <MovieInfo result={result} />
         </main>
       )}
     </>
